@@ -32,7 +32,7 @@ create_csv <- function(input_path, filename, output_path = input_path,
   files <- list.files(path = input_path, full.names = TRUE, pattern = ".json")
 
   if(length(files)==0){
-    stop(paste("Couldn't fine any JSON files in directory: ", input_path, sep = ""),
+    stop(paste("Couldn't find any JSON files in directory: ", input_path, sep = ""),
          call. = FALSE)
   }
 
