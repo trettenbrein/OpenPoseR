@@ -5,7 +5,7 @@
 clean_data(data, model, cutoff)
 }
 \arguments{
-\item{data}{A data frame with separate clumns for every points x, y, and c values.}
+\item{data}{A data frame with separate clumns for every points x, y, and c values (OpenPoseR format).}
 \item{model}{Specify which tracking model generated the data. Supply either body25, hands, or face.}
 \item{cutoff}{Optional. Defaults to .1 as threshold and removes points (x,y) with confidence rating (c) below the cutoff from a frame.}
 }
