@@ -53,7 +53,6 @@ file_clean <- function(file, model, cutoff = 0.1, overwrite = TRUE) {
   if(is.null(output_file)) {
     output <- TRUE
   } else {
-    output <- FALSE
     warning("Creating file for results of calling clean_data() failed.",
             call. = FALSE)
   }

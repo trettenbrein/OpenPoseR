@@ -54,11 +54,9 @@ file_velocity <- function(file, model, fps = 25) {
   if(is.null(file1) && is.null(file2)) {
     output <- TRUE
   } else if(!is.null(file1)) {
-    output <- FALSE
     warning("Creating file for results of calling velocity_x() failed.",
             call. = FALSE)
   } else if(!is.null(file2)) {
-    output <- FALSE
     warning("Creating file for results of calling velocity_y() failed.",
             call. = FALSE)
   }
