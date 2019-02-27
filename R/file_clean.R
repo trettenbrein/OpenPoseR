@@ -40,9 +40,24 @@ file_clean <- function(file, model, cutoff = 0.1, overwrite = TRUE) {
 
   # Update file (i.e. overwrite) or crate new file?
   if(overwrite==FALSE) {
-    write.csv(claned_data, file = paste(gsub("\\.csv$", "", file), "_cleaned.csv",
-                                        sep = ""), row.names = FALSE)
+    output_file <- try(write.csv(claned_data, file = paste(gsub("\\.csv$", "", file),
+                                                           "_cleaned.csv", sep = ""),
+                                 row.names = FALSE))
   } else {
-    write.csv(claned_data, file = file, row.names = FALSE)
+    output_file <- try(write.csv(claned_data, file = file, row.names = FALSE))
   }
+
+  # We should tell the user whether the operation was a success
+  output <- FALSE
+  ## See if files were created successfully, if not issue a warning
+  if(is.null(output_file)) {
+    output <- TRUE
+  } else {
+    output <- FALSE
+    warning("Creating file for results of calling clean_data() failed.",
+            call. = FALSE)
+  }
+
+  # Return message about result
+  return(output)
 }
