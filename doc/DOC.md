@@ -1,5 +1,7 @@
 # OpenPoseR Documentation
 
+This page provides a very basic guide to the functionality provided by OpenPoseR, illustrating how the different functions provided were intended to be used.
+
 ## What is OpenPoseR?
 
 An [R](https://www.r-project.org) package that provides some functions for analyzing motion-tracking data derived from video files using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).

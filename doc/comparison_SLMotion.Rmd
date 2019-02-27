@@ -103,7 +103,10 @@ dataOP <- read.csv(system.file("extdata", "ABEND_body25_cleaned_en_velocity.csv"
                                package = "OpenPoseR", mustWork = TRUE))
 dataOP$frame <- seq.int(nrow(dataOP))
 ggplot(data=dataOP, aes(x=frame)) +
-  geom_line(aes(y=Euclidean_norm_velocity), colour = "red")
+  geom_line(aes(y=Euclidean_norm_velocity), colour = "red") +
+  xlab("Frame") +
+  ylab("Euclidean norm of the sums of velocity vectors") +
+  ggtitle("Bodily movement in video clip EVENING")
 ```
 
 ```{r comparison, echo=FALSE}
