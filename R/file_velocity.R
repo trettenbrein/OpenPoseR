@@ -1,12 +1,13 @@
-# clean_file()
+# file_velocity()
 #
 # OpenPoseR (https://github.com/trettenbrein/OpenPoseR)
 # Patrick C. Trettenbrein, trettenbrein@cbs.mpg.de
 #
-# A wrapper for the OpenPoseR function clean_data() that makes it possible to
-# directly pass a file name and or path including a file name to the function.
+# A wrapper for the OpenPoseR functions velocity_x() and velocity_y() that makes it
+# possible to directly pass a file name and or path including a file name to the
+# function.
 
-clean_file <- function(file, model, cutoff = 0.1, overwrite = TRUE) {
+file_velocity <- function(file, model, fps = 25) {
   # We at least need an input file
   if(missing(file)) {
     stop("Argument \"file\" must be specified. Path to CSV file inclduing file name and ending (*.csv).", call. = FALSE)
@@ -35,14 +36,33 @@ clean_file <- function(file, model, cutoff = 0.1, overwrite = TRUE) {
   # Read file
   data <- read.csv(file = file)
 
-  # Call clean_data()
-  claned_data <- clean_data(data, model, cutoff)
+  # Call velocity_x() and velocity_y()
+  velocityX <- velocity_x(data, model, fps = fps)
+  velocityY <- velocity_y(data, model, fps = fps)
 
-  # Update file (i.e. overwrite) or crate new file?
-  if(overwrite==FALSE) {
-    write.csv(claned_data, file = paste(gsub("\\.csv$", "", file), "_cleaned.csv",
-                                        sep = ""), row.names = FALSE)
-  } else {
-    write.csv(claned_data, file = file, row.names = FALSE)
+  # Write results to files
+  file1 <- try(write.csv(velocityX, file = paste(gsub("\\.csv$", "", file),
+                                                 "_velocity_x.csv", sep = ""),
+                         row.names = FALSE))
+  file2 <- try(write.csv(velocityY, file = paste(gsub("\\.csv$", "", file),
+                                                 "_velocity_y.csv", sep = ""),
+                         row.names = FALSE))
+
+  # We'll have to tell the user whether calling the operation was a success
+  output <- FALSE
+  ## See if files were created successfully, if not issue warnings
+  if(is.null(file1) && is.null(file2)) {
+    output <- TRUE
+  } else if(!is.null(file1)) {
+    output <- FALSE
+    warning("Creating file for results of calling velocity_x() failed.",
+            call. = FALSE)
+  } else if(!is.null(file2)) {
+    output <- FALSE
+    warning("Creating file for results of calling velocity_y() failed.",
+            call. = FALSE)
   }
+
+  # Return message about result
+  return(output)
 }
