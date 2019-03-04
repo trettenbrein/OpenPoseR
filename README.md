@@ -8,13 +8,12 @@ The original motivation for creating this package was to control video stimuli i
 <div style="float:right; margin:5px 5px 5px 5px; width:40%">
 <figure style="width=40%">
 <img src="doc/example_videos/ABEND_OpenPose/ABEND_OpenPose_040.png" />
-</figure>
 <figcaption>Representative frame (nr. 40) from example video with fit "body25" body-pose model fit using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).</figcaption>
 </figure>
 <figure style="width=40%">
 <img src="doc/img/ABEND_plot_example.png" />
-</figure>
 <figcaption>OpenPoseR analysis of the data from the above clip. The black vertical line indicates the example frame above.</figcaption>
+</figure>
 </div>
 
 OpenPoseR can be used to analyze motion-tracking data derived from video files using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).
