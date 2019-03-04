@@ -6,16 +6,15 @@ The original motivation for creating this package was to control video stimuli i
 ## What is this?
 
 <div style="float:right; margin:5px 5px 5px 5px; width:40%">
-<figure>
-<video width="100%" controls>
-  <source src="doc/example_videos/ABEND_OpenPose.mp4" type="video/mp4">
-</video>
-<figcaption>Example video with body-pose model fit by [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).</figcaption>
+<figure style="width=100%">
+<img src="doc/example_videos/ABEND_OpenPose/ABEND_OpenPose_040.png" />
+</figure>
+<figcaption>Representative frame (nr. 40) from example video with fit "body25" body-pose model fit using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).</figcaption>
 </figure>
 <figure style="width=100%">
 <img src="doc/img/ABEND_plot_example.png" />
 </figure>
-<figcaption>OpenPoseR analysis of the data from the above clip.</figcaption>
+<figcaption>OpenPoseR analysis of the data from the above clip. The black vertical line indicates the example frame above.</figcaption>
 </div>
 
 OpenPoseR can be used to analyze motion-tracking data derived from video files using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).
@@ -26,7 +25,9 @@ OpenPose is currently most sophisticated means for tracking people in video clip
 
 ## What's it for?
 
-The original reason for developing OpenPoseR was to create a state-of-the-art means for controlling for the bodily motion occuring in different video clips showing a human being either signing or using gestures. By quantifying the gross bodily movement of the person in a particular clip it becomes possible to compare different clips of the same person that represent different conditions and determine their similiarty, a process that can be valuable for stimulus control in sign language and gesture research. <!-- See [here]() for an example.-->
+The original reason for developing OpenPoseR was to create a state-of-the-art means for controlling for the bodily motion occuring in different video clips showing a human being either signing or using gestures captured from the front (see frame from example video of the German Sign Language sign EVENING).
+
+By quantifying the gross bodily movement of the person in a particular clip from this perspective it becomes possible to compare different clips of the same person that represent different conditions and determine their similiarty. In turn, this can be useful for quantitative stimulus control in sign language and gesture research. <!-- See [here]() for an example.-->
 
 It must be pointed out here that this method *cannot* and was not intended to detect the subtle differences in hand configuration, path movement, as well as non-manual components that are linguistically meaningful and essential to sign languages. The situation may be a little less dim when it comes to gesture, but similar reservations apply.
 
