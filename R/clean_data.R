@@ -47,7 +47,7 @@ clean_data <- function(data, model, cutoff = .1) {
   for(c in 1:ncol(data_points)) {
     # We do not need to continue if nothing was tracked, i.e. all data is 0
     if(!all(data_points[c]==0)) {
-      for(r in 1:nrow(data_points)) {
+      for(r in 1:nrow(data_points)-1) {
         # If a point wasn't dedected (position = 0), compute mean from +-1 frame
         # But only, if these values aren't zero either!
         # && data_points[r-1,c]!=0 && data_points[r+1,c]!=0
