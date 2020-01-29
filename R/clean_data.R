@@ -48,11 +48,37 @@ clean_data <- function(data, model, cutoff = .1) {
     # We do not need to continue if nothing was tracked, i.e. all data is 0
     if(!all(data_points[c]==0)) {
       for(r in 2:nrow(data_points)-1) {
-        # If a point wasn't dedected (position = 0), compute mean from +-1 frame
-        # But only, if these values aren't zero either!
-        # && data_points[r-1,c]!=0 && data_points[r+1,c]!=0
-        if(data_points[r,c]==0 && data_points[r-1,c]!=0 && data_points[r+1,c]!=0) {
+        # Check what to do with 0 values
+        ## There is some redundancy here -> Maybe this can be streamlined to be
+        ## only one statement?
+        if(data_points[r,c]==0 && data_points[r-1,c]!=0 &&
+           data_points[r+1,c]!=0) {
+          # If point wasn't dedected (position = 0), compute mean from +-1 frame
+          # But only, if these values aren't zero either!
+          # && data_points[r-1,c]!=0 && data_points[r+1,c]!=0
           data_points[r,c] <- (data_points[r-1,c]+data_points[r+1,c])/2
+        } else if(data_points[r,c]==0 && data_points[r-1,c]!=0) {
+          #
+          # Last non-zero value should alwys be row above (-1)
+          last_non_zero <- -1
+
+          # Get next non-zero value
+          next_non_zero <- 1
+          while(r+next_non_zero<=nrow(data_points) &&
+             data_points[r+next_non_zero,c]==0) {
+            # Try next row by increasing counter
+            next_non_zero <- next_non_zero+1
+          }
+
+          # If we're at the end of the dataframe, just use the previous value
+          # In effect, the row will then be set to the value of the row above
+          if(next_non_zero==nrow(data_points)) {
+            next_non_zero <- -1
+          }
+
+          # Compute mean and save it
+          data_points[r,c] <- (data_points[r+last_non_zero,c]+
+                                 data_points[r+next_non_zero,c])/2
         }
       }
     }

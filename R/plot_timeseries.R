@@ -31,9 +31,9 @@ plot_timeseries <- function(plotData, dataType = "1") {
   # Check if we were told what kind of data this is (by passing a number)
   # Alternatively, we may have been passed a different label; then do nothing
   if(dataType==1) {
-    dataType <- "Euclidian norm of sums of velocity vectors"
+    dataType <- "Euclidian norm of the sums of velocity vectors"
   } else if(dataType==2) {
-    dataType <- "Euclidian norm of sums of acceleration vectors"
+    dataType <- "Euclidian norm of the sums of acceleration vectors"
   }
 
   # We'll need a reference -> Add frame numbers (if not already there)
