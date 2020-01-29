@@ -1,7 +1,7 @@
 Package: OpenPoseR
 Type: Package
 Title: Analyze Motion-Tracking Data Derived from Video Files Using OpenPose
-Version: 0.1.1
+Version: 0.2
 Authors@R: c(
     person("Patrick C.", "Trettenbrein", email = "trettenbrein@cbs.mpg.de", role = c("aut", "cre")),
     person("Emiliano", "Zaccarella", email = "zaccarella@cbs.mpg.de", role = "aut"),
@@ -14,4 +14,6 @@ License: GNU General Public License v3.0
 Encoding: UTF-8
 LazyData: true
 Imports:
-    rjson
+    rjson,
+    ggplot2,
+    reshape

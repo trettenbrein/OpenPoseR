@@ -1,6 +1,6 @@
 # OpenPoseR Documentation
 
-This page provides a very basic guide to the functionality provided by OpenPoseR, illustrating how the different functions provided were intended to be used.
+This page provides a very basic guide to the functionality provided by OpenPoseR (v 0.2), illustrating how the different functions provided were intended to be used.
 
 ## What is OpenPoseR?
 
