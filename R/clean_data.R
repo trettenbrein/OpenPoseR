@@ -45,20 +45,22 @@ clean_data <- function(data, model, cutoff = .1) {
   data_points <- data[,points]
   # We have to check every row in every column
   for(c in 1:ncol(data_points)) {
-    # We do not need to continue if nothing was tracked, i.e. all data is 0
-    if(!all(data_points[c]==0)) {
+    # We do not need to continue if nothing was tracked, i.e. all data is 0,
+    # or if the first few values are 0 (i.e. point wasn't detected)
+    # If points were not detecetd initially the whole column will be set to 0
+    if(!all(data_points[c]==0) && data_points[1,c]!=0 && data_points[2,c]!=0 &&
+       data_points[3,c]!=0) {
       for(r in 2:nrow(data_points)-1) {
         # Check what to do with 0 values
-        ## There is some redundancy here -> Maybe this can be streamlined to be
-        ## only one statement?
-        if(data_points[r,c]==0 && data_points[r-1,c]!=0 &&
-           data_points[r+1,c]!=0) {
+        if(data_points[r,c]==0 && data_points[r-1,c]!=0) {
           # If point wasn't dedected (position = 0), compute mean from +-1 frame
-          # But only, if these values aren't zero either!
-          # && data_points[r-1,c]!=0 && data_points[r+1,c]!=0
-          data_points[r,c] <- (data_points[r-1,c]+data_points[r+1,c])/2
-        } else if(data_points[r,c]==0 && data_points[r-1,c]!=0) {
-          #
+          # If there is more than one consecutive non-zero points, use the next
+          # tracked point instead and fill the gap with means. For the final
+          # point (last row) in a data frame don't do this but use the value of
+          # the last point that was tracked instead. -> i.e. this amounts to
+          # imputing the missing data at the end of a data frame with the value
+          # of the last detected point.
+
           # Last non-zero value should alwys be row above (-1)
           last_non_zero <- -1
 
@@ -81,6 +83,9 @@ clean_data <- function(data, model, cutoff = .1) {
                                  data_points[r+next_non_zero,c])/2
         }
       }
+    } else {
+      # Because the points were not detected intially, set them to 0
+      data_points[c] <- 0
     }
   }
 
