@@ -16,4 +16,6 @@ LazyData: true
 Imports:
     rjson,
     ggplot2,
-    reshape
+    reshape,
+    RColorBrewer,
+    magick

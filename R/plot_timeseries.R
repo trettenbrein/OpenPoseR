@@ -5,7 +5,7 @@
 #
 # Plot time series data derived from single-subject tracking (e.g., stimuli)
 
-plot_timeseries <- function(plotData, dataType = "1") {
+plot_timeseries <- function(plotData, dataType = "1", legend = FALSE) {
   # We'll be using ggplot2 for this, so let's require it
   if (!requireNamespace("ggplot2", quietly = TRUE)) {
     stop("Package \"ggplot2\" needed for this function to work. Please install it.", call. = FALSE)
@@ -46,11 +46,17 @@ plot_timeseries <- function(plotData, dataType = "1") {
                                                       color = variable)) +
     geom_line() +
     xlab("Frame number") +
-    ylab(dataType)
+    ylab(dataType) +
+    theme(legend.title = element_blank()) # Remove legend title
 
-  # If the data only had one column let's remove the legend
+  # Do we want a legend? Yes or no?
+  # Defaults to no legend, unless we have more than 1 column of data
+  # If the data has more than one column let's include the legend
   # But we check for two columns because we added "FrameNr" column above
-  if (ncol(plotData)==2){
+  if (ncol(plotData)>2) {
+    legend <- TRUE
+  }
+  if(legend==FALSE){
     plot <- plot + theme(legend.position = "none")
   }
 
