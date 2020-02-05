@@ -1,8 +1,3 @@
----
-output:
-  html_document: default
----
-
 # OpenPoseR
 An [R](https://www.r-project.org) package that provides functions for analyzing motion-tracking data derived from video files using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).
 
