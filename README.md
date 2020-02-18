@@ -9,7 +9,7 @@ OpenPoseR can be used to analyze motion-tracking data derived from video files u
 
 [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) is currently the most sophisticated means for tracking people in video clips. The results of motion-tracking of people in video clips with OpenPose can be used for further quantitiatve analysis that allows for quantification of movement paramters which are relevant to researchers working on sign language and gesture where bodily movements a person take on linguistic and/or discourse functions. 
 
-[Input video](demo/data/psychologie.mp4)  |  [Mirrored output video](doc/examples_body25/psychologie_body25.mp4)
+[Example video](demo/data/psychologie.mp4)  |  [Example video with fit body-pose model](doc/examples_body25/psychologie_body25.mp4)
 :-------------------------:|:-------------------------:
 <img src="doc/psychologie.png" width="95%" /> | <img src="doc/psychologie_body25.png" width="95%" />
 
