@@ -1,8 +1,0 @@
-# OpenPoseR (https://github.com/trettenbrein/OpenPoseR)
-# Patrick C. Trettenbrein, trettenbrein@cbs.mpg.de
-
-These three example clips (ABEND.mp4, HOSE.mp4, and IDEE.mp4) are taken
-from a set of more than 300 clips of single German Sign Language (DGS)
-signs created by Trettenbrein et al. (2019).
-
-The data from this publication are available here: https://osf.io/mz8j4/

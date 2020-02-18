@@ -1,6 +1,6 @@
 ---
 title: "Comparision of OpenPose(R) and SLMotion"
-author: "PC Trettenbrein, AD Friederici, & E Zaccarella"
+author: "PC Trettenbrein & E Zaccarella"
 date: "2/27/2019"
 output:
   html_document:
@@ -121,6 +121,6 @@ ggplot(data=comp, aes(x=frame)) +
   geom_line(aes(y=slm), colour = "red") +
   geom_line(aes(y=op), colour = "blue")
 
-cor.test(dataSLM$total_length_sum_vvec[2:98], dataOP[,1])
+#cor.test(dataSLM$total_length_sum_vvec[2:98], dataOP[,1])
 
 ```
