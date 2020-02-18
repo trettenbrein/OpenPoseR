@@ -29,7 +29,7 @@ OpenPoseR analysis of the data from the above clip.
 
 It must be pointed out here that this method *cannot* and was not intended to detect the subtle differences in hand configuration, path movement, as well as non-manual components that are linguistically meaningful and essential to sign languages. The situation may be a little less dim when it comes to gesture, but similar reservations apply.
 
-For details on what OpenPoseR can (and can't) do, respectively, how you can use OpenPoseR see the included [demo](demo/demo.pdf).
+For details on what OpenPoseR can (and can't) do, respectively, how you can use OpenPoseR please see this [demo](demo/demo.pdf). [Download the demo including examples here (.zip file).](demo.zip)
 
 ## Installation  
 

@@ -18,5 +18,5 @@ Can be used to use video_index() for a directory of video files and automaticall
 \examples{
 file_video_index("/home/user/my_stimulus_clips")
 
-file_video_index("/home/user/my_stimulus_clips")", fileType = ".avi", recursive = TRUE)
+file_video_index("/home/user/my_stimulus_clips"), fileType = ".avi", recursive = TRUE)
 }

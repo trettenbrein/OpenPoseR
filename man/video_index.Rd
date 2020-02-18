@@ -15,5 +15,5 @@ Creates an index (i.e. a data frame) of the video files of a given filetype (e.g
 \examples{
 video_index("/home/user/my_stimulus_clips")
 
-video_index("/home/user/my_stimulus_clips")", fileType = ".avi", recursive = TRUE)
+video_index("/home/user/my_stimulus_clips"), fileType = ".avi", recursive = TRUE)
 }
