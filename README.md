@@ -9,25 +9,27 @@ OpenPoseR can be used to analyze motion-tracking data derived from video files u
 
 [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) is currently the most sophisticated means for tracking people in video clips. The results of motion-tracking of people in video clips with OpenPose can be used for further quantitiatve analysis that allows for quantification of movement paramters which are relevant to researchers working on sign language and gesture where bodily movements a person take on linguistic and/or discourse functions. 
 
-<p align="center">
-<img width="50%" src="doc/example_videos/ABEND_OpenPose/ABEND_OpenPose_040.png" /><br />
-Representative frame (number 40, i.e. second 1.6) from example video with fit "body25" body-pose model fit using OpenPose. (See the full video with the fit body-pose model, or the original.)
-</p>
+[Input video](demo/data/psychologie.mp4)  |  [Mirrored output video](doc/examples_body25/psychologie_body25.mp4)
+:-------------------------:|:-------------------------:
+<img src="doc/psychologie.png" width="95%" /> | <img src="doc/psychologie_body25.png" width="95%" />
+
+Example video of the German Sign Language (*Deutsche Gebärdensprache*, DGS) sign for "psychology" courtesy of [Henrike Maria Falke, gebaerdenlernen.de](http://www.gebaerdenlernen.de/index.php?article_id=88) ([Creative Commons by-nc-sa/3.0/de](https://creativecommons.org/licenses/by-nc-sa/3.0/de/)).
+
 
 ## What's it for?
 
-The original reason for developing OpenPoseR was to create a state-of-the-art means for controlling for the bodily motion occuring in different video clips showing a human being either signing or using gestures captured from the front (see frame from example video of the German Sign Language sign EVENING with fit body-pose model above).
+The main reason for developing OpenPoseR was to create a state-of-the-art means for controlling for the bodily motion occuring in different video clips showing a human being either signing or using gestures captured from the front (see frame from example video of the German Sign Language sign PSYCHOLOGY with fit body-pose model above).
 
 By quantifying the gross bodily movement of the person in a particular clip from this perspective it becomes possible to compare different clips (of the same person) that, for example, may represent different conditions in an experiment and determine their similiarty and/or differences. This method therefore may be useful for quantitative stimulus control in sign language and gesture research. <!-- See [here]() for an example.-->
 
 <p align="center">
-<img width="50%" src="doc/img/ABEND_plot_example.png" /><br />
-OpenPoseR analysis of the data from the above clip. The black vertical line indicates the example frame in the illustration above.
+<img width="50%" src="doc/psychologie_timeseries.png" /><br />
+OpenPoseR analysis of the data from the above clip.
 </p>
 
 It must be pointed out here that this method *cannot* and was not intended to detect the subtle differences in hand configuration, path movement, as well as non-manual components that are linguistically meaningful and essential to sign languages. The situation may be a little less dim when it comes to gesture, but similar reservations apply.
 
-For details on what OpenPoseR can (and can't) do, respectively, how you can use OpenPoseR see the [documentation](doc/DOC.md).
+For details on what OpenPoseR can (and can't) do, respectively, how you can use OpenPoseR see the included [demo](demo/demo.pdf).
 
 ## Installation  
 
