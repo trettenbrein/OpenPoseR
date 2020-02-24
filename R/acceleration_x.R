@@ -48,10 +48,13 @@ acceleration_x <- function(data, model, fps = 25) {
   acceleration_x <- setNames(acceleration_x, points_x)
 
   # Compute acceleration (x-axis) for all points in model
-  for(i in 1:(nrow(data)-1)){
-    # Formula: (((pixel at t1)-(pixel at t1-1))/((t1)-(t1-1)))/((t1)-(t1-1))
-    acceleration_x <- rbind(acceleration_x, (data[i+1,points_x] -
-                                               data[i,points_x])/k)
+  for(i in 1:(nrow(data)-2)){
+    # Formula: ((((point at t1)-(point at t1-1))/((t1)-(t1-1)))-
+    # (((point at t1)-(point at t1-1))/((t1)-(t1-1))))/((t1)-(t1-1)))
+    acceleration_x <- rbind(acceleration_x, (((data[i+2,points_x] -
+                                               data[i+1,points_x])/k) -
+                                               ((data[i+1,points_x] -
+                                               data[i,points_x])/k))/k)
   }
 
   # Return result

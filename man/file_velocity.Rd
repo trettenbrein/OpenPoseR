@@ -18,6 +18,6 @@ Can be used to call velocity_x() and velocity_y() for a CSV file (*.csv) created
 # Compute velocity for file "~/myvideo/myvideo_body25.csv"
 file_velocity("~/myvideo/myvideo_body25_cleaned.csv")
 
-# Compute velocity for file "~/myvideo/myvideo.csv" with probability < .5
+# Compute velocity for file "~/myvideo/myvideo.csv" and manually specify model
 file_velocity("~/myvideo/myvideo_cleaned.csv", model = "body25")
 }

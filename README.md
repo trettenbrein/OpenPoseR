@@ -1,5 +1,5 @@
 # OpenPoseR
-An [R](https://www.r-project.org) package that provides functions for analyzing motion-tracking data derived from video files using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose). Current version: 0.5
+An [R](https://www.r-project.org) package that provides functions for analyzing motion-tracking data derived from video files using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose).
 
 The original motivation for creating this package was to control video stimuli in sign language and gesture reserach, but the provided functionality may also be useful for other purposes.
 
@@ -33,7 +33,7 @@ For details on what OpenPoseR can (and can't) do, respectively, how you can use 
 
 ## Installation  
 
-For now, OpenPoseR can be installed using the following commands (you will need to have the ``devtools`` package installed):
+For now, OpenPoseR (current version: 0.9) can be installed using the following commands (you will need to have the ``devtools`` package installed):
 
 ```r
 # Install devtools from CRAN (if not already installed)
