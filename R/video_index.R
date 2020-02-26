@@ -18,6 +18,11 @@ video_index <- function(path, fileType = ".mp4", recursive = FALSE) {
     stop(paste("Couldn't find directory: ", path, sep = ""), call. = FALSE)
   }
 
+  # Check wether a trailing slash was supplied; if not add it
+  if(substr(path, nchar(path), nchar(path))!="/") {
+    path <- paste(path, "/", sep = "")
+  }
+
   # We'll be using "av" for this, so let's require it
   if (!requireNamespace("av", quietly = TRUE)) {
     stop("Package \"av\" needed for this function to work. Please install it.",
