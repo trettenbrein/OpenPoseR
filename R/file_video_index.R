@@ -3,9 +3,9 @@
 # OpenPoseR (https://github.com/trettenbrein/OpenPoseR)
 # Patrick C. Trettenbrein, trettenbrein@cbs.mpg.de
 #
-# A wrapper for the OpenPoseR functions velocity_x() and velocity_y() that makes it
-# possible to directly pass a file name and or path including a file name to the
-# function.
+# A wrapper for the OpenPoseR functions video_index that makes it possible to
+# create an index of video files and their properties by passing a directory
+# (i.e. path) to the function.
 
 file_video_index <- function(videoPath, outputPath = videoPath, fileType = ".mp4", recursive = FALSE) {
   # We at least need an input directory
@@ -16,6 +16,11 @@ file_video_index <- function(videoPath, outputPath = videoPath, fileType = ".mp4
   # Check whether directory exists
   if(!file.exists(videoPath)) {
     stop(paste("Couldn't find directory: ", videoPath, sep = ""), call. = FALSE)
+  }
+
+  # Check if output  directory exists; if not, create it
+  if(!file.exists(outputPath)) {
+    mkdir(outputPath)
   }
 
   # Create index

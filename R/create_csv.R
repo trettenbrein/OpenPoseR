@@ -25,6 +25,11 @@ create_csv <- function(input_path, filename, output_path = input_path,
     library("rjson")
   }
 
+  # Check if output  directory exists; if not, create it
+  if(!file.exists(output_path)) {
+    mkdir(output_path)
+  }
+
   # Path for input and output files
   #filesdir <- paste(input_path, filename, sep = "")
 
