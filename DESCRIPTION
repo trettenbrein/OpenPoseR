@@ -1,11 +1,10 @@
 Package: OpenPoseR
 Type: Package
 Title: Analyze Motion-Tracking Data Derived from Video Files Using OpenPose
-Version: 0.9
+Version: 1.0
 Authors@R: c(
     person("Patrick C.", "Trettenbrein", email = "trettenbrein@cbs.mpg.de", role = c("aut", "cre")),
-    person("Emiliano", "Zaccarella", email = "zaccarella@cbs.mpg.de", role = "aut"),
-    person("Angela D.", "Friederici", email = "friederici@cbs.mpg.de", role = "ctb"))
+    person("Emiliano", "Zaccarella", email = "zaccarella@cbs.mpg.de", role = "aut"))
 URL: https://github.com/trettenbrein/OpenPoseR
 BugReports: https://github.com/trettenbrein/OpenPoseR/issues
 Description: Provides functions for analyzing motion-tracking data derived from video files using OpenPose.
