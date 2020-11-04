@@ -1,6 +1,6 @@
 \name{det_hand}
 \alias{det_hand}
-\title{Determine wheter the left, right, or both arms moved}
+\title{Determine whether the left, right, or both arms were moved}
 \usage{
 det_hand(vel_x, vel_y)
 }
