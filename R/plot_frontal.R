@@ -14,6 +14,22 @@ plot_frontal <- function(plotData, width = 720, height = 576, backgroundImage = 
     library("ggplot2")
   }
 
+  # We'll be using ggpubr for this, so let's require it
+  if (!requireNamespace("ggpubr", quietly = TRUE)) {
+    stop("Package \"ggpubr\" needed for this function to work. Please install it.", call. = FALSE)
+  } else {
+    # Load "ggpubr" package
+    library("ggpubr")
+  }
+
+  # We'll be using hexbin (for computing the bins) , so let's require it
+  if (!requireNamespace("hexbin", quietly = TRUE)) {
+    stop("Package \"hexbin\" needed for this function to work. Please install it.", call. = FALSE)
+  } else {
+    # Load "hexbin" package
+    library("hexbin")
+  }
+
   # We'll be using RColorBrewer for this, so let's require it
   if (!requireNamespace("RColorBrewer", quietly = TRUE)) {
     stop("Package \"RColorBrewer\" needed for this function to work. Please install it.", call. = FALSE)
