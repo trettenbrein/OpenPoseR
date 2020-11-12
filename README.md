@@ -49,6 +49,12 @@ The OpenPoseR package was created at the [Max Planck Institute for Human Cogniti
 
 If you have found a bug, please report it [here](https://github.com/trettenbrein/OpenPoseR/issues). In case you have any questions, criticism, or suggestions that do not belong into the bugtracker, please e-mail Patrick at [trettenbrein@cbs.mpg.de](mailto:trettenbrein@cbs.mpg.de).
 
+## Citation
+
+If you use OpenPoseR in your own work, please reference the following preprint in your paper(s):
+
+> Trettenbrein, P. C., & Zaccarella, E. (2020). *Controlling video stimuli in sign language and gesture research: The OpenPoseR package for analyzing OpenPose motion tracking data in R*. PsyArXiv. [https://doi.org/10.31234/osf.io/pnqxa](https://doi.org/10.31234/osf.io/pnqxa)
+
 ## License
 
 The code of this project is free for use, re-use, and modification by anyone without any liability or warranty under the conditions of the [GNU General Public License v3.0](https://github.com/trettenbrein/OpenPoseR/blob/master/LICENSE).
