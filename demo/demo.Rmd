@@ -8,7 +8,7 @@ output:
 
 # What is this?
 
-This is a quick intro to OpenPoseR. OpenPoseR is an [R](https://www.r-project.org) package that provides some functions for analyzing motion-tracking data derived from video files using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose). The original motivation for creating this package was to control video stimuli in sign language and gesture reserach, but the provided functionality may also be useful for other purposes.
+This is a quick intro to OpenPoseR. OpenPoseR is an [R](https://www.r-project.org) package that provides some functions for analyzing motion-tracking data derived from video files using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose). The original motivation for creating this package was to control video stimuli in sign language and gesture research, but the provided functionality may also be useful for other purposes.
 
 In this demo, you will learn how to (i) organize your video data, (ii) perform motion-tracking using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose), (iii) process the raw data with OpenPoseR, and (iv) prepare these data for plotting and/or further statistical analysis.
 
@@ -190,7 +190,7 @@ motionPsychology <- read.csv("data_openposer/psychologie_body25_cleaned_en_veloc
 plot_timeseries(motionPsychology)
 ```
 
-This simple plot provides an illustration of how we have quantified the total amount of bodily motion occuring in the input video clip. Now rewatch the video clip `psychologie.mp4` and you will see that the DGS sign for "psychology" is articulated with an initial large movement to the chest (i.e. sign onset), hand movement on the chest, followed by another large movement (i.e. sign offset). In the plot above, both sign onset and offset are clearly visible as peaks in the timeseries.
+This simple plot provides an illustration of how we have quantified the total amount of bodily motion occurring in the input video clip. Now rewatch the video clip `psychologie.mp4` and you will see that the DGS sign for "psychology" is articulated with an initial large movement to the chest (i.e. sign onset), hand movement on the chest, followed by another large movement (i.e. sign offset). In the plot above, both sign onset and offset are clearly visible as peaks in the timeseries.
 
 ## Comparision to another video clip
 
@@ -208,7 +208,7 @@ colnames(plotData) <- c("psychologie.mp4", "gebaerden.mp4")
 plot_timeseries(plotData)
 ```
 
-Of course, what we can do with this quantifaction of motion information is not limited to visual comparision of two videos. Instead, we can apply the method outlined in this demo to a larger number of files used, for example, in an experiment showing sign language video clips to participants and use this quantification of motion as a way of controlling our stimuli (i.e. making sure that the videos shown in different conditions of an experiment are actually comparable).
+Of course, what we can do with this quantification of motion information is not limited to visual comparison of two videos. Instead, we can apply the method outlined in this demo to a larger number of files used, for example, in an experiment showing sign language video clips to participants and use this quantification of motion as a way of controlling our stimuli (i.e. making sure that the videos shown in different conditions of an experiment are actually comparable).
 
 # Creators & development
 
