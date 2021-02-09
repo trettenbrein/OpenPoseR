@@ -47,13 +47,13 @@ devtools::install_github("trettenbrein/OpenPoseR")
 
 The OpenPoseR package was created at the [Max Planck Institute for Human Cognitive & Brain Sciences](https://www.cbs.mpg.de) by [Patrick C. Trettenbrein](http://trettenbrein.biolinguistics.eu) in collaboration with [Emiliano Zaccarella](https://www.cbs.mpg.de/employees/zaccarella) under the supervision of [Angela D. Friederici](https://www.cbs.mpg.de/employees/friederici).
 
-If you have found a bug, please report it [here](https://github.com/trettenbrein/OpenPoseR/issues). In case you have any questions, criticism, or suggestions that do not belong into the bugtracker, please e-mail Patrick at [trettenbrein@cbs.mpg.de](mailto:trettenbrein@cbs.mpg.de).
+If you have found a bug, please report it [here](https://github.com/trettenbrein/OpenPoseR/issues). In case you have any questions, criticism, or suggestions that do not belong into the bug tracker, please e-mail Patrick at [trettenbrein@cbs.mpg.de](mailto:trettenbrein@cbs.mpg.de).
 
 ## Citation
 
-If you use OpenPoseR in your own work, please reference the following preprint in your paper(s):
+If you use OpenPoseR in your own work, please reference the following paper in your manuscript(s):
 
-> Trettenbrein, P. C., & Zaccarella, E. (2020). *Controlling video stimuli in sign language and gesture research: The OpenPoseR package for analyzing OpenPose motion tracking data in R*. PsyArXiv. [https://doi.org/10.31234/osf.io/pnqxa](https://doi.org/10.31234/osf.io/pnqxa)
+> Trettenbrein, P. C., & Zaccarella, E. (2021). Controlling video stimuli in sign language and gesture research: The *OpenPoseR* package for analyzing *OpenPose* motion tracking data in *R*. *Frontiers in Psychology*, 12, 628728. [https://doi.org/10.3389/fpsyg.2021.628728](https://doi.org/10.3389/fpsyg.2021.628728)
 
 ## License
 
