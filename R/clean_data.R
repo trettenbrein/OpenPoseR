@@ -47,13 +47,13 @@ clean_data <- function(data, model, cutoff = .1) {
   for(c in 1:ncol(data_points)) {
     # We do not need to continue if nothing was tracked, i.e. all data is 0,
     # or if the first few values are 0 (i.e. point wasn't detected)
-    # If points were not detecetd initially the whole column will be set to 0
+    # If points were not detected initially the whole column will be set to 0
     if(!all(data_points[c]==0) && data_points[1,c]!=0 && data_points[2,c]!=0 &&
        data_points[3,c]!=0) {
       for(r in 2:nrow(data_points)-1) {
         # Check what to do with 0 values
-        if(data_points[r,c]==0 && data_points[r-1,c]!=0) {
-          # If point wasn't dedected (position = 0), compute mean from +-1 frame
+        if(!is.na(data_points[r,c]) && !is.na(data_points[r-1,c]) && data_points[r,c]==0 && data_points[r-1,c]!=0) {
+          # If point wasn't detected (position = 0), compute mean from +-1 frame
           # If there is more than one consecutive non-zero points, use the next
           # tracked point instead and fill the gap with means. For the final
           # point (last row) in a data frame don't do this but use the value of
@@ -61,7 +61,7 @@ clean_data <- function(data, model, cutoff = .1) {
           # imputing the missing data at the end of a data frame with the value
           # of the last detected point.
 
-          # Last non-zero value should alwys be row above (-1)
+          # Last non-zero value should always be row above (-1)
           last_non_zero <- -1
 
           # Get next non-zero value
@@ -84,7 +84,7 @@ clean_data <- function(data, model, cutoff = .1) {
         }
       }
     } else {
-      # Because the points were not detected intially, set them to 0
+      # Because the points were not detected initially, set them to 0
       data_points[c] <- 0
     }
   }
