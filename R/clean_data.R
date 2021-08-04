@@ -20,7 +20,16 @@ clean_data <- function(data, model, cutoff = .1) {
 
   # Check probability for every tracked point in data frame; remove if necessary
   for(row in 1:nrow(data)) {
-    for(point in 0:24) {
+    # Determine number of columns that we'll have to check depending on the model
+    if(model=="body25") {
+     columns <- 24
+    } else if(model=="hands") {
+      columns <- 20
+    } else if(model=="face") {
+      columns <- 69
+    }
+
+    for(point in 0:columns) {
       # Confidence in tracking smaller than or equal to cutoff?
       if(data[row,paste("c", point, sep = "")]<=cutoff) {
         # Set data points (x, y) and c to 0
