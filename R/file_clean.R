@@ -20,12 +20,11 @@ file_clean <- function(file, model, cutoff = 0.1, overwrite = TRUE) {
   # Check whether file name contains information about model
   # If file was created by create_csv() then it should
   if(missing(model)) {
-    if(as.logical(grep("_body25", file))==TRUE) {
+    if(grepl("_body25", file)==TRUE) {
       model <- "body25"
-    } else if(as.logical(grep("_hand_left", file))==TRUE | as.logical(
-      grep("_hand_right", file))==TRUE ) {
+    } else if(grepl("_hand_left", file)==TRUE | grepl("_hand_right", file)==TRUE ) {
       model <- "hands"
-    } else if(as.logical(grep("_face", file))==TRUE) {
+    } else if(grepl("_face", file)==TRUE) {
       model <- "face"
     } else {
       stop("Argument \"model\" must be specified. Tell me from which model the data came from (body25, hands, or face).", call. = FALSE)
