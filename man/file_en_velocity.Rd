@@ -7,6 +7,7 @@ file_en_velocity(file1, file2)
 \arguments{
 \item{file1}{Name of first CSV file (*.csv) or path to file including filename. This file should contain the velocity for the x-axis, computed using velocity_x().}
 \item{file2}{Name of second CSV file (*.csv) or path to file including filename. This file should contain the velocity for the y-axis, computed using velocity_y().}
+\item{start_from_zero}{Determines if the output should be preceded with a row containing 0.}
 }
 \description{
 Compute en_velocity() for given CSV files generated using file_velocity().

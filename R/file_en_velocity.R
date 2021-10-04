@@ -6,7 +6,7 @@
 # A wrapper for the OpenPoseR function en_velocity() that makes it possible to
 # directly pass two file names and or paths including a file name to the function.
 
-file_en_velocity <- function(file1, file2) {
+file_en_velocity <- function(file1, file2, start_from_zero = TRUE) {
   # We need file 1 (x)
   if(missing(file1)) {
     stop("Argument \"file1\" must be specified. Path to CSV file inclduing file name and ending (*.csv).", call. = FALSE)
@@ -30,7 +30,7 @@ file_en_velocity <- function(file1, file2) {
   data2 <- read.csv(file = file2)
 
   # Call en_velocity()
-  en <- en_velocity(data1, data2)
+  en <- en_velocity(data1, data2, start_from_zero = start_from_zero)
 
   # Update file (i.e. overwrite) or crate new file?
   output_file <- try(write.csv(en, file = paste(gsub("\\_velocity_x.csv$", "", file1),

@@ -8,7 +8,7 @@
 # using the x-axis and y-axis data generated using acceleration_x() and
 # acceleration_y().
 
-en_acceleration <- function(acc_x, acc_y) {
+en_acceleration <- function(acc_x, acc_y, start_from_zero = TRUE) {
   # We at least need some data to work with
   if(missing(acc_x) | missing(acc_y)) {
     stop("You have to pass the function two data frames (acceleration on x-axis and y-axis) to work with.",
@@ -17,6 +17,11 @@ en_acceleration <- function(acc_x, acc_y) {
 
   # Create empty data frame for later use
   euclideanNormAcceleration <- data.frame(matrix(nrow = 0, ncol = 1))
+
+  # Check whether the output should start with a row of 0s; by default it is included
+  if(start_from_zero==TRUE) {
+    euclideanNormAcceleration[1,] <- 0
+  }
 
   # Compute Euclidean norm of sums of accelleration vectors
   for(i in 1:(nrow(acc_x)-1)){

@@ -7,6 +7,7 @@ file_en_acceleration(file1, file2)
 \arguments{
 \item{file1}{Name of first CSV file (*.csv) or path to file including filename. This file should contain the acceleration for the x-axis, computed using acceleration_x().}
 \item{file2}{Name of second CSV file (*.csv) or path to file including filename. This file should contain the acceleration for the y-axis, computed using acceleration_y().}
+\item{start_from_zero}{Determines if the output should be preceded with a row containing 0.}
 }
 \description{
 Compute en_acceleration() for given CSV files generated using file_acceleration().

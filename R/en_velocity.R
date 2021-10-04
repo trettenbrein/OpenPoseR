@@ -7,7 +7,7 @@
 # Compute Euclidean norm of sums of velocity vectors for a tracked video using the
 # x-axis and y-axis data generated using velocity_x() and velocity_y().
 
-en_velocity <- function(vel_x, vel_y) {
+en_velocity <- function(vel_x, vel_y, start_from_zero = TRUE) {
   # We at least need some data to work with
   if(missing(vel_x) | missing(vel_y)) {
     stop("You have to pass the function two data frames (velocity on x-axis and y-axis) to work with.",
@@ -16,6 +16,11 @@ en_velocity <- function(vel_x, vel_y) {
 
   # Create empty data frame for later use
   euclideanNormVelocity <- data.frame(matrix(nrow = 0, ncol = 1))
+
+  # Check whether the output should start with a row of 0s; by default it is included
+  if(start_from_zero==TRUE) {
+    euclideanNormVelocity[1,] <- 0
+  }
 
   # Compute Euclidean norm of sums of velocity vectors
   for(i in 1:(nrow(vel_x)-1)){
