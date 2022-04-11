@@ -33,7 +33,7 @@ For details on what OpenPoseR can (and can't) do, respectively, how you can use 
 
 ## Installation  
 
-For now, OpenPoseR (current version: 1.0.4) can be installed using the following commands (you will need to have the ``devtools`` package installed):
+For now, OpenPoseR (current version: 1.0.5) can be installed using the following commands (you will need to have the ``devtools`` package installed):
 
 ```r
 # Install devtools from CRAN (if not already installed)

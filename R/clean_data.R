@@ -75,21 +75,21 @@ clean_data <- function(data, model, cutoff = .1) {
 
           # Get next non-zero value
           next_non_zero <- 1
-          while(r+next_non_zero<=nrow(data_points) &&
+          while(r+next_non_zero<nrow(data_points) &&
              data_points[r+next_non_zero,c]==0) {
             # Try next row by increasing counter
             next_non_zero <- next_non_zero+1
           }
 
-          # If we're at the end of the dataframe, just use the previous value
-          # In effect, the row will then be set to the value of the row above
-          if(next_non_zero==nrow(data_points)) {
-            next_non_zero <- -1
-          }
+          # If we've reached the end of the data frame without any non-zero value
+          # set point to 0. If not, compute mean and save it
+          if(r+next_non_zero==nrow(data_points)) {
+            data_points[r,c] <- 0
+          } else {
 
-          # Compute mean and save it
-          data_points[r,c] <- (data_points[r+last_non_zero,c]+
+            data_points[r,c] <- (data_points[r+last_non_zero,c]+
                                  data_points[r+next_non_zero,c])/2
+          }
         }
       }
     } else {
